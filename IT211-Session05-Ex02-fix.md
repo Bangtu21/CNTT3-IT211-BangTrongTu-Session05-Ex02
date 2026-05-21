@@ -1,0 +1,26 @@
+IT211-Session05-Ex02-fix
+Chức năng				Method	URL			Query Param(nếu có)	Status thành công	Status lỗi (Ví dụ
+Lấy danh sách sách			GET	/books			?page=1&limit=10	200 OK			400 Bad Request
+Lấy chi thiết một sách			GET	/books/{id}		Không			200 OK			404 Not Found
+Lọc theo tác giả			GET	/books?author=		Không			200 OK			404 Not Found
+Thêm sách mới				POST	/books			Không			201 Create		400 Bad Request
+Cập nhật toàn bộ thông tin của sách	PUT	/books/{id}		Không			200 OK			404 Not Found
+Cập nhật giá sách			PATCH	/books/{id}		Không			200 OK			400 Bad Request
+Cập nhật số lượng sách			PATCH	/books/{id}/quantity	Không			200 OK			400 Bad Request
+Xóa sách				DELETE	/books/{id}		Không			204 No Contetn		404 Not Found
+Tạo thẻ mượn mới			POST	/loans			Không			201 Create		400 Bad Request
+Trả sách (cập nhật ngày trả)		PATCH	/loans/{id}		Không			200 OK			404 Not Found
+Lấy danh sách thẻ mượn của sách		GET	/books/{id}/loans	Không			200 OK			400 Bad Request
+
+Demo nhỏ:
+Lấy tất cả sách của tác giả Nguyễn Nhật Ánh: 
+	+ GET /books?author=”Nguyễn Nhật Ánh”
+Tạo thẻ mượn:
+	+ POST /loans
+	Body:
+	{
+		“bookId”: “3”,
+		“borrowName”: “Bàng Trọng Tú”,
+		“borrowDate”: “2026-05-20”
+	}
+
